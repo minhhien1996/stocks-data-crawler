@@ -35,8 +35,7 @@ class InsertToMongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        return item
-        if item.get('related_indexes'):
+        if item.get('related_symbols'):
             keys = [
                 'category',
                 'title',
