@@ -35,6 +35,7 @@ class InsertToMongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
+        return item
         if item.get('related_indexes'):
             keys = [
                 'category',
@@ -44,7 +45,10 @@ class InsertToMongoPipeline(object):
                 'date_string_at_crawled',
                 'timestamp',
                 'contents',
-                'related_indexes',
+                'related_symbols',
+                'main_symbol',
+                'negative_phrases',
+                'positive_phrases',
             ];
             mongodb_item = pydash.pick_by(item, lambda v, k: k in keys)
             try:
