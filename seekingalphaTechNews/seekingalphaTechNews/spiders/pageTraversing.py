@@ -4,7 +4,7 @@ import dateparser
 import datetime
 import re
 
-NUMBER_OF_PAGES = 1
+NUMBER_OF_PAGES = 999
 
 class PagetraversingSpider(scrapy.Spider):
     name = 'SeekingAlphaTechPageTraversing'
